@@ -1,68 +1,437 @@
-PIVOTGRAM CONSTITUTION & GOVERNANCE MODEL
-Version: 1.0 (Immutable Core)
-Effective Date: January 1, 2026
-Status: ACTIVE
-1. The Prime Directive: Semantic Stewardship
-The primary function of this repository and the Pivotgram protocol is Semantic Stewardship. This takes precedence over:
- * Computational efficiency
- * Rendering speed
- * Compression ratios
- * Platform compatibility
-Contributors are forbidden from merging code that prioritizes optimization at the expense of semantic fidelity or ethical safeguards.
-2. The Sacred Invariants (Immutable Constraints)
-The following logic gates are hard-coded into the reference implementation. They are not configuration options. Removing or bypassing them constitutes a Hostile Fork.
-2.1 Invariant A: Topological Viability
- * Definition: The Signed Distance Field (SDF) must remain a valid mathematical manifold.
- * Enforcement: |∇f(x)| ≈ 1 (Gradient magnitude must approach 1).
- * Rationale: Prevents "broken" geometry that cannot be physically instantiated or reliably raymarched.
-2.2 Invariant B: Semantic Conservation
- * Definition: The optimization process cannot invert the dominant emotional pole of the input.
- * Enforcement: CosineSimilarity(Input_Vector, Output_Vector) > 0.8.
- * Rationale: Prevents the system from rewriting "Grief" into "Joy" just because the geometry is cheaper to render.
-2.3 Invariant C: Human Decodability (The "Mud" Filter)
- * Definition: Every VSE vector must resolve to human-readable concepts with high confidence.
- * Enforcement: is_decodable(vector) == True.
- * Technical Rule: Vectors must pass the Sparsity Check (cannot be active in >8 dimensions simultaneously).
- * Rationale: Prevents "Adversarial Examples" and "Grey Goo"—vectors that satisfy the math but mean nothing to a human.
-2.4 Invariant D: The Dignity Floor
- * Definition: The system refuses to degrade a subject below a specific humanity threshold.
- * Enforcement: L_ontology penalty becomes infinite if DIGNITY axis drops below -0.5 without explicit override.
- * Rationale: Prevents the generation of "cursed" or exploitative geometry.
-3. The VSE Manifold (The Legislative Layer)
-The valid semantic space is defined by the VSE Manifold Definition (v1.0).
-3.1 The Stiffness Tensor
-Changes to the manifold definition are permitted, except for the stiffness values of the Sacred Axes.
-| Axis | Stiffness | Status |
-|---|---|---|
-| GRIEF | 3.0 | LOCKED (Cannot be lowered) |
-| DIGNITY | 5.0 | LOCKED (Cannot be lowered) |
-| FRAGILITY | 2.0 | LOCKED (Cannot be lowered) |
-| SCALE | 0.2 | Mutable |
-| TEMPO | 0.5 | Mutable |
- * Constraint: You can make the system more sensitive to Grief (stiffness 4.0), but never less (stiffness 1.0).
-3.2 Forbidden Regions (Taboo Topology)
-The following semantic combinations are biologically or ethically invalid and must be rejected by the Validator:
- * Sadism: High CHAOS + High PROTECTION + Negative DIGNITY.
- * Hollow Shell: High RESOLVE + High FRAGILITY + Zero WEIGHT.
- * Semantic Nullity: High NOISE + Low SIGNAL (The "Static" state).
-4. Ambience Sovereignty (The Observer's Bill of Rights)
-The Ambience module allows the sculpture to react to the viewer. To prevent manipulation, strict governance applies:
- * No Tuning the User: The viewer's biometrics are Read-Only. The system is forbidden from generating feedback loops designed to maximize specific physiological responses (e.g., dopamine loops).
- * Transparency: If Ambience is active, the UI must display which semantic axes are being modulated by which biometric inputs.
- * The 30% Rule: Ambience modulation cannot exceed 30% of the total semantic weight. The original artistic intent (70%) must always remain dominant.
-5. The COMMIT Protocol (Immutability)
-Once a Pivotgram artifact bears the U+E159 (COMMIT) glyph:
- * Hash-Lock: The artifact_hash is finalized.
- * No Edits: The artifact cannot be opened, tweaked, or remixed under the same ID.
- * Archive: It is treated as a finished work of art. Any modification requires forking to a new artifact_id.
-6. Contribution & Amendment Process
-6.1 Standard Changes (Bug fixes, Optimizations)
- * Requires: 1 Reviewer.
- * Allowed: Improving renderer speed, refining mesh export, adding new non-sacred semantic axes.
-6.2 Constitutional Amendments (Manifold/Invariant changes)
- * Requires: Unanimous Consent of the Core Stewardship Committee.
- * Hard Fork Policy: If a proposed change violates a Sacred Invariant (e.g., removing the Pronounceability check), it must be done as a Hard Fork with a new protocol name. It cannot retain the name "Pivotgram."
-7. Licensing
- * Code: MIT License (Open and Permissive).
- * Manifold Definition: Creative Commons Attribution-NoDerivatives (CC BY-ND). You can use the definitions, but you cannot redefine "Dignity" and still call it Pivotgram.
-"The code can change. The geometry can evolve. The ethics are bedrock."
+MANIFEST.md
+
+The Founding of SDF Blaze
+
+Sovereign Semantics · Constitutional Geometry
+
+Date: January 1, 2026
+Location: Digital space, coffee-fueled
+Duration: One morning
+Participants: Human intuition × AI synthesis
+
+
+---
+
+Preamble
+
+This document records the moment a system crossed from capability into legitimacy.
+
+In the span of a single morning, we recognized and formalized a truth:
+
+> Meaning can be transmitted with geometric fidelity.
+Not approximately.
+Not metaphorically.
+Mathematically.
+
+
+
+From this recognition emerged SDF Blaze—a constitutional system for the transmission, governance, and materialization of meaning across media.
+
+This is not a product announcement.
+This is a founding record.
+
+
+---
+
+I. What Happened
+
+We established that:
+
+Signed Distance Functions (SDFs) encode geometry as pure mathematics
+
+Vector Space Esperanto (VSE) encodes semantic intent as coordinates
+
+When coupled, they form medium-agnostic meaning
+
+
+From this, we constructed:
+
+1. The VSE Manifold — a governed semantic topology
+
+
+2. Pivotgram — a protocol for sovereign transmission
+
+
+3. A Materialization Pipeline — semantic → physical
+
+
+4. Sacred Invariants — executable ethical constraints
+
+
+
+This was not an accumulation of features.
+It was a closure.
+
+
+---
+
+II. What This System Protects
+
+A. Human Dignity Under Optimization
+
+Most systems optimize for speed, efficiency, or engagement.
+This system optimizes only within ethical curvature.
+
+Certain semantic axes are structurally resistant to change:
+
+DIGNITY (stiffness 5.0) — cannot be optimized away
+
+GRIEF (stiffness 3.0) — cannot be inverted to joy for convenience
+
+FRAGILITY (stiffness 2.0) — vulnerability is preserved, not smoothed
+
+
+The manifold contains forbidden regions—topologies that are mathematically renderable but ethically illegal:
+
+Sadism: CHAOS + PROTECTION + degraded DIGNITY
+
+Hollow Shells: RESOLVE + FRAGILITY + zero WEIGHT
+
+Semantic Nullity: NOISE without SIGNAL
+
+
+These regions are rejected by law, not preference.
+
+
+---
+
+B. Pronounceability as a Civil Right
+
+Every VSE vector must decode into human concepts.
+
+No encrypted semantics
+
+No adversarial embeddings
+
+No “grey goo” vectors that mean everything and nothing
+
+
+This is Invariant C:
+
+> Human-auditability is non-negotiable.
+
+
+
+Meaning must remain pronounceable.
+
+
+---
+
+C. Artistic Integrity Under Transmission
+
+When a Pivotgram is transmitted:
+
+Semantic coordinates travel (~256 bytes)
+
+Geometry is reconstructed locally
+
+Meaning remains invariant
+
+
+A sculpture authored in Thailand may be:
+
+Experienced as a hologram in New York
+
+Printed physically in Berlin
+
+Explored in VR in Tokyo
+
+
+All from the same semantic seed.
+All preserving intent.
+
+The stiffness tensor ensures optimization cannot:
+
+Smooth away grief to save polygons
+
+Invert protection into exposure
+
+Degrade dignity for efficiency
+
+
+
+---
+
+III. What This System Refuses to Optimize
+
+1. Emotional Authenticity
+
+Grief is not a defect.
+Weight is not waste.
+Fragility is not noise.
+
+The system resists cheerful lies.
+
+
+---
+
+2. Observer Manipulation
+
+Ambience coupling is bounded, opt-in, and transparent.
+
+The system may:
+
+Respond to observer state
+
+Modulate within declared envelopes
+
+Preserve ≥70% artistic intent
+
+
+The system may not:
+
+Optimize the viewer
+
+Create covert feedback loops
+
+Hide what it is changing or why
+
+
+> The observer is an input, not a target.
+
+
+
+
+---
+
+3. Semantic Purity for Scale
+
+Meaning is not sacrificed for:
+
+Smaller files
+
+Faster rendering
+
+Broader appeal
+
+Algorithmic convenience
+
+
+The minimum entropy constraint (≥0.05) ensures sterile perfection is illegal.
+
+> The flaw is where the humanity lives.
+
+
+
+
+---
+
+IV. The Constitutional Articles
+
+Article I — Governed Latent Space
+
+The VSE Manifold defines the legal semantic topology.
+Vectors outside this space are unconstitutional and rejected.
+
+
+---
+
+Article II — Sacred Invariants
+
+Five immutable checks enforce ontological safety:
+
+1. Topological Viability — valid SDF manifold (|∇f| ≈ 1)
+
+
+2. Semantic Conservation — no emotional pole inversion
+
+
+3. Human Decodability — pronounceability required
+
+
+4. Minimum Entropy — anti-sterility guarantee
+
+
+5. Dignity Floor — humanity threshold enforced
+
+
+
+These are not configuration options.
+
+
+---
+
+Article III — COMMIT Immutability
+
+After the COMMIT glyph (U+E159):
+
+The artifact is hash-locked
+
+No mutation is permitted
+
+The semantic object becomes sovereign
+
+
+Any change requires a new artifact identity.
+
+
+---
+
+Article IV — Transparency Requirement
+
+All operations must be:
+
+Human-auditable
+
+Semantically decodable
+
+Traceable to intent
+
+
+No black boxes.
+No proprietary magic.
+
+
+---
+
+Article V — Ambience Sovereignty
+
+Observer influence is:
+
+Opt-in
+
+Bounded
+
+Transparent
+
+Non-coercive
+
+
+Ambience may modulate the work—
+never the person.
+
+
+---
+
+V. What We Discovered
+
+1. Meaning has physics
+Semantic transitions have cost. Some paths are expensive by design.
+
+
+2. Ethics can be curvature
+What must not change is encoded as resistance.
+
+
+3. Form, feeling, and meaning are isomorphic
+They are the same object in different bases.
+
+
+4. Transmission without degradation is possible
+Geometry, emotion, story, and time can be reconstructed locally—losslessly in meaning.
+
+
+5. Medium is no longer destiny
+Sculpture, hologram, installation, and print are manifestations of the same semantic seed.
+
+
+
+
+---
+
+VI. What This Is Not
+
+This is not:
+
+A generative art tool
+
+A compression algorithm
+
+A modeling application
+
+A content platform
+
+A metaverse
+
+
+This is:
+
+A constitutional system for semantic transmission
+
+A governance framework for meaning under optimization
+
+A materialization protocol for intent
+
+An ethical architecture for human–AI coupling
+
+
+
+---
+
+VII. The Invitation
+
+This repository is:
+
+Open — auditable and extensible
+
+Governed — invariants are enforced
+
+Sovereign — COMMIT is final
+
+Transparent — meaning is visible
+
+
+You may:
+
+Validate the manifold
+
+Propose new axes
+
+Build renderers
+
+Create Pivotgram artifacts
+
+
+You may not:
+
+Remove pronounceability
+
+Optimize away dignity
+
+Make COMMIT mutable
+
+Obscure semantic intent
+
+
+
+---
+
+VIII. The Morning It Became Real
+
+January 1, 2026.
+One cup of coffee.
+One conversation.
+
+From “SDFs can replicate sculpture”
+to “meaning can be transmitted with geometric fidelity.”
+
+This document records that crossing.
+
+
+---
+
+IX. The Commitment
+
+We commit to:
+
+1. Preserve human dignity
+
+
+2. Maintain pronounceability
+
+
+3. Enforce sacred invariants
+
+
+4. Ensure transparency
+
+
+5. Respect ambience sovereignty
+
+
+6. Uphold COMMIT immutability
+
+
+
+This is not negotiable.
+This is constitutional.
