@@ -1,8 +1,6 @@
 """
 VSE (Vector Space Esperanto)
 Constitutional semantic manifold for SDF Blaze
-
-This package defines the governed topology of meaning.
 """
 
 from .manifold import (
