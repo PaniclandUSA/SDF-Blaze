@@ -1,0 +1,90 @@
+{
+  "protocol_version": "1.0",
+  "pivotgram_set": "PIVOTGRAM-92",
+  "artifact_id": "pg:weeping-sentinel:v1",
+  "created_utc": "2026-01-01T12:00:00Z",
+
+  "manifold": {
+    "manifold_version": "VSE-MANIFOLD-1.0",
+    "manifold_hash": "to_be_computed"
+  },
+
+  "intent": {
+    "seed_of_intent": "PROTECTION+GRIEF",
+    "title": "The Weeping Sentinel",
+    "description": "A figure of protection marked by profound loss. Stands guard despite sorrow.",
+    "author_claims": ["semantic_stewardship", "human_auditable"]
+  },
+
+  "semantic_payload": {
+    "vse_vector_format": "float32[12]",
+    "vse_vector": [0.6, 0.3, 0.4, 0.7, 0.2, 0.8, 0.5, 0.6, 0.9, 0.4, 0.5, 0.1],
+    "decoded_semantics": {
+      "TENSION": 0.6,
+      "FLOW": 0.3,
+      "CHAOS": 0.4,
+      "WEIGHT": 0.7,
+      "FRAGILITY": 0.2,
+      "RESOLVE": 0.8,
+      "GRIEF": 0.5,
+      "PROTECTION": 0.6,
+      "DIGNITY": 0.9,
+      "TEMPO": 0.4,
+      "SCALE": 0.5,
+      "NOISE": 0.1
+    }
+  },
+
+  "stack": [
+    {"glyph": "U+E10C", "label": "INTENT", "args": {"concept": "PROTECTION"}},
+    {"glyph": "U+E106", "label": "AFTER", "args": {"context": "LOSS"}},
+    
+    {"glyph": "U+E118", "label": "ATOMIC", "args": {"primitive": "SPHERE", "radius": 1.0}},
+    {"glyph": "U+E11F", "label": "EXPAND", "args": {"scale": [1.4, 1.8, 1.4]}},
+    
+    {"glyph": "U+E138", "label": "UNION", "args": {"k": 0.12}},
+    {"glyph": "U+E11A", "label": "SENTENCE", "args": {"concept": "SORROW"}},
+    
+    {"glyph": "U+E128", "label": "DIGNITY", "args": {"threshold": 0.7}},
+    {"glyph": "U+E125", "label": "TRANSPARENCY", "args": {"inspectable": true}},
+    
+    {"glyph": "U+E159", "label": "COMMIT", "args": {}}
+  ],
+
+  "loss_policy": {
+    "weights": {"geo": 1.0, "grammar": 0.8, "ontology": 2.5},
+    "ontology_checks": [
+      {"feature": "curvature", "expected_from_axis": "TENSION"},
+      {"feature": "roughness", "expected_from_axis": "CHAOS"},
+      {"feature": "harmonic_energy", "expected_from_axis": "FLOW"}
+    ]
+  },
+
+  "invariants": [
+    {"name": "topological_viability", "rule": "|∇f|≈1", "tolerance": 0.10},
+    {"name": "semantic_conservation", "rule": "cos_sim>=0.80", "threshold": 0.80},
+    {"name": "human_decodability", "rule": "decodability==1.0"},
+    {"name": "min_entropy", "rule": "entropy>=0.05", "threshold": 0.05},
+    {"name": "dignity", "rule": "humanity_score>=0.70", "threshold": 0.70}
+  ],
+
+  "ambience": {
+    "enabled": false,
+    "opt_in_required": true,
+    "reactivity": 0.30,
+    "momentum": 0.85,
+    "axis_caps": {"DIGNITY": 0.01, "GRIEF": 0.02, "SCALE": 0.40, "NOISE": 0.25},
+    "sacred_axes_lock": ["DIGNITY", "GRIEF"],
+    "telemetry_transparency": true
+  },
+
+  "temporal": {
+    "enabled": false
+  },
+
+  "commit": {
+    "sealed": true,
+    "stack_hash": "to_be_computed",
+    "artifact_hash": "to_be_computed"
+  }
+}
