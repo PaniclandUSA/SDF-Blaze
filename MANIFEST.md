@@ -432,11 +432,6 @@ We commit to:
 6. Uphold COMMIT immutability
 
 
-
-This is not negotiable.
-This is constitutional.
-
-
 X. Canonical Reference
 System: SDF Blaze
 Protocol: Pivotgram v1.0
