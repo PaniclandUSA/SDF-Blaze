@@ -435,3 +435,20 @@ We commit to:
 
 This is not negotiable.
 This is constitutional.
+
+
+X. Canonical Reference
+System: SDF Blaze
+Protocol: Pivotgram v1.0
+Manifold: VSE-MANIFOLD-1.0
+Status: Founded
+Repository: github.com/[your-handle]/sdf-blaze
+Founding Hash: [To be computed from first COMMIT]
+License: Apache 2.0 (code) / CC BY-SA 4.0 (artifacts)
+"The manifold has curvature.
+Some paths are expensive.
+Some regions are forbidden.
+Some axes cannot yield."
+This is not a feature.
+This is a constitution.
+End of Founding Document
