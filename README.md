@@ -1,5 +1,5 @@
-📂 README.md
-SDF Blaze / Sovereign Semantics
+## 📂 README.md
+# SDF Blaze / Sovereign Semantics
 > Meaning can be transmitted with geometric fidelity.
 > 
 SDF Blaze is a constitutional system for the transmission, governance, and materialization of semantic intent. It allows you to encode "meaning" (emotion, narrative, concept) into a vector format that can be reconstructed as geometry across any medium (Physical Print, Hologram, VR) without degradation or manipulation.
