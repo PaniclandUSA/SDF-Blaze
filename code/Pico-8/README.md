@@ -16,7 +16,7 @@ STATUS: FOSSIL RECORD - CANONICAL
 ## How to Run
 
 1. Download [PICO-8](https://www.lexaloffle.com/pico-8.php)
-2. Load `Corpuscle_phase3.py`
+2. Load `Corpuscle_phase3.p8`
 3. Press Ctrl+R to run
 
 ## Controls
