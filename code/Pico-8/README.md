@@ -1,103 +1,151 @@
-# The Corpuscle Crew™ — PICO-8 Constitutional Reference Implementation
+# The Corpuscle Crew™
+
+### PICO-8 Constitutional Reference Implementation (SDF-Blaze™)
+
+---
 
 ## Constitutional Certification
 
+```
 ═══════════════════════════════════════════════════════════════
 CONSTITUTIONAL CERTIFICATE
-PICO-8 Reference Implementation v1.3.2 (Stabilized Phase 3)
+PICO-8 Reference Implementation v1.3.9 (Trust Phase)
 
-Article I: Core Invariants    ✓ COMPLIANT
+Article I: Core Invariants              ✓ COMPLIANT
+Article II: PI Compliance               ✓ COMPLIANT
+Article III: Non-Negotiables             ✓ COMPLIANT
+Article VII: Pathological Geometry       ✓ COMPLIANT
+Article IX: Mastery Responsiveness       ✓ COMPLIANT
 
-Article II: PI Compliance    ✓ COMPLIANT
-
-Article III: Non-Negotiables  ✓ COMPLIANT
-
-Article VII: Pathological Geometry ✓ COMPLIANT
-
-
-Token Count: ~1,350 / 8,192
-Ops Budget: ~700–1,000 / 8,000 per frame
-LOD Ladder: ACTIVE (3 levels, CPU-governed)
+Token Count: ~1,500 / 8,192
+Ops Budget: ~700–1,100 / 8,000 per frame
+LOD Ladder: ACTIVE (CPU-governed)
 Iterator Safety: VERIFIED (Deferred Deletion)
+Mastery Signal: DIEGETIC (Hidden)
 
-STATUS: CANONICAL · STABLE · SHIP-READY
+STATUS: CANONICAL · STABLE · LIVE
 ═══════════════════════════════════════════════════════════════
-
+```
 
 ---
 
 ## Overview
 
-The Corpuscle Crew™ is a PICO-8 game and systems experiment exploring constitutional game design:
+**The Corpuscle Crew™** is a PICO-8 game and constitutional systems experiment built on **SDF-Blaze™**, exploring a core principle:
 
-> Graphics serve gameplay.
-Geometry communicates truth.
-Performance degrades gracefully before control does.
+> **Graphics serve gameplay.
+> Geometry communicates truth.
+> The system responds to mastery, not numbers.**
 
+Unlike traditional sprite-based games, *Corpuscle Crew* uses **Signed Distance Fields (SDFs)** as a *single source of truth* for:
 
+* collision
+* rendering
+* animation
+* environmental physics
 
-Version v1.3.2 represents the stabilized Phase 3 build, integrating:
+What the player sees is *exactly* what the game simulates.
 
-Deferred deletion for iterator safety
+As of **v1.3.9**, the cartridge represents the **Trust Phase**:
+the game no longer escalates difficulty purely through aggression, but through **environmental cooperation** that emerges when the player demonstrates sustained skill.
 
-A CPU-governed 3D sigil projection (icosahedral core)
+This cartridge functions as:
 
-Hardened SDF collision + rendering
-
-Fully verified update/draw separation
-
-
-This cartridge now functions as both a playable game and a fossil record of constitutional principles applied under extreme constraints.
-
+* a complete arcade game
+* a reference implementation of constitutional design under extreme constraints
+* a living fossil record of SDF-driven gameplay evolution
 
 ---
 
 ## How to Run
 
-1. Download PICO-8 from https://www.lexaloffle.com/pico-8.php
+1. Download **PICO-8**
+   [https://www.lexaloffle.com/pico-8.php](https://www.lexaloffle.com/pico-8.php)
 
+2. Load the cartridge:
 
-2. Load the cartridge file:
+```
+corpuscle_crew_v1_3_9_*.p8
+```
 
-Corpuscle_phase3_v1.3.2.p8
-
-
-3. Press Ctrl+R to run
-
-
-
+3. Press **Ctrl+R** to run
 
 ---
 
 ## Controls
 
-Core Gameplay
+### Core Gameplay
 
-Arrow Keys — Rotate / Move
+* **Arrow Keys** — Move
+* **Z (🅾)** — Fire
+* **X (❎)** — Special ability (organ-specific)
+* **🅿 / Start** — Pause (native Pico-8 menu)
 
-Z (🅾) — Shoot
+> ⚠️ There are **no multi-button combos**.
+> Control intent is always respected.
 
-X (❎) — Fire inoculation bolt
+---
 
+## Gameplay Structure
 
-Defense Phase
+```
+Combat Waves
+   ↓
+Organ Challenge (every 3 waves)
+   ↓
+Permanent Adaptation
+   ↓
+Boss Encounter (milestones)
+   ↓
+Return to Combat
+```
 
-Arrow Keys — Move placement cursor
+### Key Concepts
 
-Z (🅾) — Place tower
+* **Organ Physics:**
+  Each arena represents a biological system with unique forces
+  (heart pulse, lung breath, brain warp, etc.)
 
-X (❎) — Cycle tower type
+* **Challenges ≠ Combat:**
+  Organ challenges test *physics understanding*, not DPS.
 
-Z + X — Continue to next phase
+* **Bosses = Exams:**
+  Bosses mutate based on HP thresholds and punish fighting the physics instead of learning them.
 
+---
 
+## The Trust Update (v1.3.5+)
+
+### Hidden Mastery System
+
+The game tracks recent performance and derives a **mastery signal** from the player’s last several waves.
+
+This value is **never shown**.
+
+Instead, it subtly modulates the environment:
+
+* Heart pulses become smoother
+* Lung forces grow more predictable
+* Brain warps stabilize
+* Visual noise reduces
+* Vein density decreases
+
+> Skilled play does not make the player stronger.
+> **It makes the world calmer.**
+
+If a player asks:
+
+> *“Why did that feel easier this time?”*
+
+The system has succeeded.
 
 ---
 
 ## Technical Highlights
 
-SDF Vein Walls (Single Source of Truth)
+### SDF Geometry (Single Source of Truth)
 
+```lua
 function vein_sdf(x,y,t,l)
  local pulse=0
  if l==1 then
@@ -107,69 +155,52 @@ function vein_sdf(x,y,t,l)
  end
  return (base_r+pulse) - abs(y-center_y)
 end
+```
 
-The signed distance field is used for:
+The same distance function governs:
 
-Collision resolution
+* collision resolution
+* rendering
+* animation
+* LOD degradation
 
-Visual rendering
-
-Organic animation
-
-LOD-aware degradation
-
-
-There are no wall sprites. Geometry is the wall.
-
+There are **no wall sprites**.
+**Geometry *is* the wall.**
 
 ---
 
-## Constitutional LOD Governor
+### Constitutional LOD Governor
 
+```lua
 if cpu>0.95 then lod=0      -- Static fallback
-elseif cpu>0.80 then lod=1  -- Reduced motion
-else lod=2 end              -- Full geometry
+elseif cpu>0.80 then lod=1 -- Reduced motion
+else lod=2 end             -- Full geometry
+```
 
-Visual complexity degrades before gameplay responsiveness
-
-Player input and physics remain authoritative
-
-The same LOD governs 2D SDF walls and 3D sigil rendering
-
-
+* Visual complexity degrades before control
+* Input and physics remain authoritative
+* LOD governs both 2D SDFs and 3D projections
 
 ---
 
-## Boss Mutation & Core Revelation
+### Boss Mutation System
 
-Boss geometry mutates as HP decreases:
+Bosses mutate as health decreases:
 
-HP Range	Behavior
+| HP Range | Behavior         |
+| -------- | ---------------- |
+| 100–70%  | Stable geometry  |
+| 70–40%   | Increased wobble |
+| 40–20%   | Erratic mutation |
+| <20%     | Core exposed     |
 
-100–70%	6 lobes, stable
-70–40%	5 lobes, increased wobble
-40–20%	4 lobes, erratic
-<20%	3 lobes, core exposed
-
-
-When the core is exposed:
-
-A procedural icosahedral sigil appears
-
-Pure ALU 3D projection (no sprites, no models)
-
-2× damage to core
-
-Projection is LOD-gated and z-clipped for safety
-
-
+Bosses are **geometric problems**, not bullet sponges.
 
 ---
 
-## Deferred Deletion (Iterator Safety)
+### Deferred Deletion (Iterator Safety)
 
-v1.3.2 introduces a hardened deletion model:
-
+```lua
 dead_q = {}
 
 -- mark
@@ -179,111 +210,80 @@ add(dead_q, e)
 -- flush
 for e in all(dead_q) do del(en, e) end
 dead_q = {}
+```
 
-This guarantees:
+Guarantees:
 
-No iterator invalidation
+* No iterator invalidation
+* No skipped entities
+* Stability at extreme densities (Wave 60+)
 
-No skipped entities
-
-No frame-dependent crashes at high density
-
-
-This change is foundational to the stability of later waves.
-
+This is foundational to long-run survivability.
 
 ---
 
-## Porting Guide
+## Design Principles (Non-Negotiable)
 
-If porting this project to another platform or engine:
+* No invisible walls
+* No sprite-driven logic
+* No stat inflation
+* No UI-exposed mastery meters
+* Performance degrades before control
+* Physics must always be readable
 
-Preserve the phase state machine
-(shooter ↔ defense ↔ boss)
+---
 
-Retain SDF-based walls (not tiles, not sprites)
+## Porting Notes
 
-Keep boss mutation thresholds (4 stages)
+If adapting this project to another engine:
 
-Honor crew archetype tradeoffs
+* Preserve **distance-field geometry**
+* Preserve **phase-based state machine**
+* Preserve **boss mutation thresholds**
+* Preserve **mastery as environmental response**
+* Never separate visuals from collision logic
 
-Enforce frame-time guarantees before visuals
-
-Avoid asset-driven logic (geometry must reflect state)
-
-
-The React prototype may add:
-
-Particles
-
-Audio
-
-Screen shake
-
-
-…but must not change core logic.
-
+Particles, audio, and polish may change.
+**Truth must not.**
 
 ---
 
 ## Known Issues / Future Work
 
-Balance tuning for waves 7–9
-
-Minor UX clarity for defense phase exit
-
-Optional optimization: precomputed icosahedron edge list
-
-Audio pass (non-authoritative, cosmetic only)
-
-
+* Additional boss exam variants
+* Optional ceremonial mastery moments
+* Further organ-specific challenge tuning
+* Non-authoritative audio pass
+* Documentation of SDF-Blaze authoring workflow
 
 ---
 
 ## Credits
 
-Design & Direction: John (Panicland USA)
+**Design & Direction:**
+John (Panicland USA)
 
-Constitutional Framework & Systems Architecture: Vox
+**Constitutional Framework & Systems Architecture:**
+Vivid Vox™
 
-Implementation & Iterative Development: Claude (Anthropic)
+**Implementation & Iterative Development:**
+Claude (Anthropic)
 
-Independent Validation & Review: Grok
-
-
+**Independent Validation & Review:**
+Grok · Gemini
 
 ---
 
-## Version History
+## Version History (Selected)
 
-v1.0 — Fossil Record (2025-01-23)
+* **v1.0** — Fossil Record
+  Initial SDF walls, crew archetypes, phase alternation
 
-Initial constitutional implementation
+* **v1.3.2** — Stabilized Canon
+  Deferred deletion, 3D sigil projection, iterator safety
 
-SDF vein walls with LOD ladder
+* **v1.3.5** — The Trust Update
+  Hidden mastery, environmental calm, diegetic feedback
 
-4 crew archetypes
-
-Phase alternation
-
-Procedural boss mutation
-
-
-v1.3.1 — Phase 3 Expansion
-
-Boss core reveal
-
-Procedural 3D sigil (icosahedron)
-
-CPU-gated projection
-
-
-v1.3.2 — Stabilized Canon
-
-Deferred deletion (iterator safety)
-
-Z-clipped 3D projection
-
-Dead-state gating across logic & draw
-
-Production-ready stability
+* **v1.3.6–1.3.9** — Live Stability
+  Boss fixes, bullet fixes, native menu integration
